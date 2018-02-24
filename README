@@ -1,19 +1,18 @@
-Multi-resolution Analysis (MRA) based classification for audio data
+Multi-resolution Analysis (MRA) based classification for audio data.
 
-Utilizes auto-weka and LSTM on untransformed and 4 approximation / detail representations.
-
+Utilizes auto-weka and LSTM on untransformed and 4 approximation / detail representations. 
 
 Install weka and auto-weka 
 (https://www.cs.waikato.ac.nz/~ml/weka/, https://www.cs.ubc.ca/labs/beta/Projects/autoweka/)
 Install tensorflow and keras via pip3 utility
 
-
 Usage:
 (process data: extract features, normalize; build mra classifier and test) 
+The processed feature files for the ESC-10 data set (https://github.com/karoldvl/ESC-50) are supplied in the data directory. 
 
 setup paths as necessary (e.g. to cuda for tensorflow-gpu)
-./run_mra_voting.pl (uses auto-weka)
 python3 lstm1_sound.py (uses LSTM)
+./run_mra_voting.pl (uses auto-weka + LSTM)
 
 
 Sergey Voronin, 2018

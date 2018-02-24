@@ -14,7 +14,8 @@ import java.io.Serializable;
 import java.io.ObjectInputStream;
 import java.io.FileInputStream; 
 
-// run auto-weka on test train sets..
+// run auto-weka on test train sets
+// Sergey Voronin
 
 //import weka.core.*;
 import weka.classifiers.evaluation.output.prediction.PlainText;

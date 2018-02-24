@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# MRA classification example for ESC data
+# Sergey Voronin
+# combines auto-weka and LSTM results
+
 # runs the raw data , wavelet detail/approx matching voting scheme
 my @data_files = ("samples_unt.txt", "samples_wavelet1ap.txt", "samples_wavelet1dl.txt", 
  "samples_wavelet2ap.txt", "samples_wavelet2dl.txt", 
@@ -87,14 +91,14 @@ foreach (@data_files){
 	system($cmd);
 }
 
-#print "run LSTM classifier\n";
-#$cmd = "python3 lstm1_sound.py";
-#system($cmd);
+print "run LSTM classifier\n";
+$cmd = "python3 lstm1_sound.py";
+system($cmd);
 
-print "==> make combined predictions..\n";
+print "==> make combined predictions (auto-ml + LSTM)..\n";
 my $data_files_str = join(' ',@data_files);
 $cmd_args = $predicted_labels_fname." ".scalar(@data_files)." ".$data_files_str;
-$cmd = "./make_combined_predictions1.py $cmd_args";
+$cmd = "./make_combined_predictions2.py $cmd_args";
 print("$cmd\n");
 system($cmd);
 print("==> end make_combined_predictions.py\n");

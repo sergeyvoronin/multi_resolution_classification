@@ -11,6 +11,8 @@ import numpy as np
 import os
 import csv
 
+# run LSTM multiple sequences (1+8 feature sets) to one classification problem
+# Sergey Voronin
 
 def printf(format, *values):
     print(format % values)
